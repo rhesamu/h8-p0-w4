@@ -7,6 +7,12 @@ var people = [
   { name: 'Budi', id: '0004'} // 2
 ]
 
+// for (var i = 0; i < people.length; i++) {
+//   let newindex = people.length+i
+//   people[newindex] = {name: 'hehe'}
+//   // people[people.length +i].name = "Abc";
+// }
+
 for (var i = 0; i < people.length; i++) {
   console.log('ID: ' + people[i].id);
   console.log('Name: ' + people[i].name);
