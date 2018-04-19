@@ -9,6 +9,8 @@ function cariModus(arr) {
     }
   }
 
+  console.log(modus);
+
   if (modus.length === 0 || modus.length > arr.length) {
     return -1;
   }

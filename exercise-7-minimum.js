@@ -5,20 +5,33 @@ function digitPerkalianMinimum(angka) {
   for (var i = 1; i <= angka; i++) {
     var temp = [];
     if (angka % i === 0) {
+      var pembagi = 0;
       temp.push(i);
-      numbers.push(temp);
+      pembagi = angka / i;
+      //i = 1, pembagi 24
+
+      var str = i + '' + pembagi;
+
+      //numbers.push(str);
+      numbers.push(str.length)
     }
   }
 
-  var factor = [];
-  var len = 0;
+  // console.log(numbers);
 
-  for (var i = 0; i < (numbers.length / 2); i++) {
-    factor[i] = numbers[i].concat(numbers[numbers.length - 1 - i]).join();
-    String(factor[i].concat());
+  for (var i = 0; i < numbers.length; i++) {
+    for (var j = i+1; j < numbers.length; j++) {
+      if (numbers[i] > numbers[j]) {
+        var temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+      }
+    }
   }
 
-  return factor[0].length;
+  // console.log(numbers);
+
+  return numbers[0];
 }
 
 // TEST CASES
