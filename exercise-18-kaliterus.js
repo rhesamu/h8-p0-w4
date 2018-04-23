@@ -7,20 +7,32 @@ Contoh:
 -------
 3 => 3, karena sudah satu digit 24 => 8. Karena 24 dua digit, maka kita lakukan 2 * 4 = 8. 8 satu digit, maka hasilnya adalah 8. 654 => 0. Karena 654 tiga digit, maka lakukan 6 * 5 * 4 = 120. 120 tiga digit, maka lakukan 1 * 2 * 0 = 0. 0 satu digit, maka hasilnya adalah 0.
 */
-
-function kaliTerusRekursif(angka) {
-  // you can only write your code here!
-  var number = String(angka);
-
-  if (number.length === 1) {
+function looping (angka) {
+  // var temp = 1;
+  // for(var i = 0; i < angka.length; i++) {
+  //   temp = temp * Number(angka[i]);
+  // }
+  //
+  // return temp;
+  var str = String(angka)
+  if (str.length === 1) {
     return angka;
   }
   else {
-    var temp = 1;
-    for(var i = 0; i < number.length; i++) {
-      temp = temp * Number(number[i]);
-    }
-    return kaliTerusRekursif(temp);
+    return Number(str[0]) * looping(Number(str.slice(1)));
+  }
+}
+
+function kaliTerusRekursif(angka) {
+  // you can only write your code here!
+  var str = String(angka);
+
+  if (str.length === 1) {
+    return angka;
+  }
+  else {
+    var loop = looping(str);
+    return kaliTerusRekursif(loop);
   }
 }
 
